@@ -330,7 +330,7 @@ class MaskedNumber extends Masked<Class<Number>> {
     @override
   */
   get typedValue (): number {
-    return Number(this.unmaskedValue);
+    return this.unmaskedValue === '' || this.unmaskedValue === null ? null : Number(this.unmaskedValue);
   }
 
   set typedValue (n: number) {
